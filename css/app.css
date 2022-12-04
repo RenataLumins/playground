@@ -1,0 +1,316 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {font-family: Arial; font-size: 16px;}
+
+
+.display_none {
+    display: none;
+}
+
+.aside {
+    width: 30%;
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px 0;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.main {
+    width: 70%; 
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px 0;
+}
+
+.breadcrumbs li {
+    display: inline;
+    position: relative;
+    padding-left: 20px;
+}
+
+.breadcrumbs li + li::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: red;
+}
+
+
+
+.posters-list .swiper-slide {
+    display: flex;
+     justify-content: flex-end; 
+     height: 175px; 
+     width: 125px; 
+     flex-direction: column; 
+      border-style: solid; 
+      border-width: thin; 
+      border-color: gray;
+}
+
+.titles {
+    font-size: 180%; font-weight: bold;
+}
+
+.button {
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+
+.button.theme-1 {
+    height: 35px !important;
+    font-size: 105%; 
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px 5px;
+}
+
+.best-dorama > a {
+   color: #8B2F20; cursor: pointer;
+}
+.best-dorama > a:hover  {
+    background-color: #FFD050;
+}
+
+.swiper {
+    user-select: none;
+}
+
+.dropdown {
+    position: absolute; 
+    left: 50%; transform: translateX(-50%); 
+    opacity: 0; 
+    background: whitesmoke; 
+    filter: drop-shadow(-3px 5px 10px rgba(128, 128, 128, 0.75));
+    border: 1px solid black; 
+    transition: all 200ms ;
+     pointer-events: none; 
+     display: flex; 
+     justify-content: space-between;
+     width: 1150px; 
+     max-width: 93%;
+    padding: 10px;
+     z-index: 100;
+     border-color: transparent;
+}
+.dropdown.active {
+    opacity: 1;  pointer-events: all;
+}
+
+.menu {
+    position: relative;
+}
+
+.dropdown > div  {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown_text {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: white; 
+    font-size: 120%; 
+    font-weight: bold;
+    background-color: transparent; 
+    cursor: pointer; 
+    border: none;
+    font-size: 1rem;
+    display: inline- flex; 
+    align-items: center;
+     gap: 5px;
+}
+.dropdown_text.active > svg {
+    transform:  rotate(180deg);
+}
+
+.overlay {
+    position: fixed; overflow-y: auto; opacity: 0; transition: all 200ms; background-color: rgba(0, 0, 0, 0.6); pointer-events: none; top: 0; right: 0; bottom: 0; left: 0; z-index: 9999; 
+}
+
+.overlay.active {
+    opacity: 1;  pointer-events: all; 
+}
+
+.cancel {
+    background-color: gray;  cursor: pointer; position: absolute; top:0; right:0; 
+}
+
+.poster {
+    width: 100%; height: 430px; cursor: pointer; border-style: solid; border-width: thin; 
+  }
+
+.accord_q {
+    font-size: 140%; cursor: pointer; user-select: none;
+}
+.accord_item.active .accord_q .arrow {
+    transform:  rotate(90deg);
+}
+
+.accord_a {
+    display: none;
+}
+
+.accord_item.active .accord_a {
+    display: block;
+}
+
+.accord_group {
+    display: flex; flex-direction: column; gap: 10px; 
+}
+
+input[type=checkbox] { display: none; }
+
+.pseudocheckbox::before {
+    content: "\00A0";
+    display: inline-block;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid #B0B0B0;
+    border-radius: 2px;
+    margin-right: 6px;
+    vertical-align: baseline;
+   
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+    color: #808080;
+}
+
+input[type=checkbox]:checked + .pseudocheckbox::before{content: "\2714"; color: #808080; font-weight: bold; }
+
+
+  .login_line {
+    display: flex;
+    height: 25px;
+    width: 100%;
+    border: 2px solid green;
+  }
+
+  .header_icons {
+    height: 20px;
+    width: 20px;
+    color: white;
+    cursor: pointer;
+  }
+  .header_arrow {
+    width: 12px; 
+    height: 12px;
+     position: relative;
+      top: 2px;
+  }
+
+
+  .side-menu {
+    position: fixed;
+    right: 0px;
+    top: 135px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 30px;
+    padding: 13px 3px;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+    background: white;
+    z-index: 99;
+    cursor: pointer;
+    filter: drop-shadow(-3px 5px 10px rgba(128, 128, 128, 0.75));
+    user-select: none;
+  }
+
+  .side-menu span {
+    writing-mode: vertical-lr;
+    margin-bottom: 3px;
+    color: black;
+  }
+
+.flex {
+    display: flex;
+}
+  .alsoSidenav {
+    flex-direction: column; 
+    gap: 15px 0;
+    height: 100%;
+    width: 350px; /* 0 ширина - измените это с помощью JavaScript */
+    position: fixed; /* Оставаться на месте */
+    z-index: 1; /* Оставайтесь на вершине */
+    top: 0; /* Оставайтесь на вершине */
+    right: 0;
+    background-color: white;
+
+    padding-top: 40px; /* Поместите содержимое 60px сверху */
+    transition: 0.5s; /* 0.5 секунд эффект перехода, чтобы скользить в sidenav */
+    display: none;
+    transform: translateX(100%);
+    filter: drop-shadow(-3px 5px 10px rgba(128, 128, 128, 0.75));
+
+  }
+
+  .ahover a:hover {
+    color: #f1f1f1;
+  }
+
+  /* Положение и стиль кнопки закрытия (верхний правый угол) */
+.alsoSidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #818181;
+    text-decoration: none;
+    padding: 8px 8px 8px 32px;
+    cursor: pointer;
+    
+  }
+
+  @media (max-width: 1150px) {
+    .hereIsMyClass {
+     display: none;
+    }
+    .hereIsMyClassToo {
+     display: block;
+    }
+    .common {
+     width: 1000px;
+     display: flex; 
+     justify-content: center; 
+     padding-left: 40px;
+     padding-right: 40px;
+    }
+}
+
+  @media (max-width: 1000px) {
+    .asideNone {
+     display: none;
+     }
+    .mainMedia {
+        width: 10%;
+    }
+    .displayFlex {
+        display: flex;
+    }
+    .display {
+        display:block;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .headerNone {
+        display: none;
+    }
+  }

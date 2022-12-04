@@ -1,0 +1,19 @@
+1 - разметить хтмл, чтобы сайт выглядел как https://doramatv.live/
+2 - навесить стили на каждый блок
+
+
+
+display: block/flex - способ отображения контейнера
+padding - внутренние отступы
+margin - внешние отступы
+width
+height
+background-color
+border
+
+
+
+tag {}
+#id {}
+.class {}
+[some-custom-parametr] {}
